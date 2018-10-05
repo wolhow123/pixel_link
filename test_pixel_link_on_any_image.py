@@ -122,7 +122,9 @@ def test():
                 return pixel_link.mask_to_bboxes(mask, image_data.shape)
             
             def draw_bboxes(img, bboxes, color):
+                print(len(bboxes))
                 for bbox in bboxes:
+                    print(bbox)
                     points = np.reshape(bbox, [4, 2])
                     cnts = util.img.points_to_contours(points)
                     util.img.draw_contours(img, contours = cnts, 
@@ -139,7 +141,7 @@ def test():
             draw_bboxes(image_data, bboxes_det, util.img.COLOR_RGB_RED)
 #             print util.sit(pixel_score)
 #             print util.sit(mask)
-            print util.sit(image_data)
+            print(util.sit(image_data))
                 
         
 def main(_):
